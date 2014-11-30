@@ -70,3 +70,41 @@ mars hello.asm
 make hello.asm
 mars hello.asm
 exit
+make hello.asm
+make clean
+make hello.asm
+make clean
+clear
+make clean
+make hello.asm
+make clean
+make hello.asm
+make clean
+make hello.asm
+mars hello.asm
+make clean
+mars hello.asm
+make hello.asm
+mars hello.asm
+make clean
+make hello.asm
+mars hello.asm
+make clean
+make hello.asm
+mars hello.asm
+make clean
+make hello.asm
+mars hello.asm
+make clean
+make hello.asm
+mars hello.asm
+make clean
+
+make hello.asm
+make clean
+make hello.asm
+mars hello.asm
+make clean
+make hello.asm
+mars hello.asm
+exit

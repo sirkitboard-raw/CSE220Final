@@ -1,5 +1,4 @@
 #include "stddef.h"
-#include "string.h"
 
 /**
  * Calculates the length of a '\0' terminated string.
@@ -7,7 +6,8 @@
  * @param str Pointer to a '\0' terminated string.
  * @return Returns the length of the string.
  */
-size_t hw_strlen(const char *str) {
+size_t strlen(const char *str) {
+  //TODO: String lengh returns size + 1 
   size_t ctr = 0;
   int incr = 0;
   while (*(str+incr) != '\0') {
@@ -23,14 +23,14 @@ size_t hw_strlen(const char *str) {
  * @param str2 Pointer to a '\0' terminated string.
  * @return Returns 1 if equal, else 0.
  */
-int hw_strcmp(const char *str1, const char *str2){
+int strcmp(const char *str1, const char *str2){
   int i;
   int ret=1;
-  if(hw_strlen(str1)!=hw_strlen(str2)) {
+  if(strlen(str1)!=strlen(str2)) {
     return 0;
   }
   else {
-    for(i=0;i<hw_strlen(str1);i=i+sizeof(char)) {
+    for(i=0;i<strlen(str1);i=i+sizeof(char)) {
       if(*(str1+i)!=*(str2+i)) {
         ret = 0;
         break;

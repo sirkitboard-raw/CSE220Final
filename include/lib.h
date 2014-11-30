@@ -23,6 +23,10 @@ int close(int fd);
 
 int read(int fd, char* buffer, int num);
 
+char* readstring(char* buffer, int size);
+
+
+
 /* System syscalls */
 void exit(void);
 

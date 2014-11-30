@@ -1,4 +1,5 @@
 #include "stddef.h"
+
 #ifndef STRING_H
   #define STRING_H
   #if !defined(NULL)
