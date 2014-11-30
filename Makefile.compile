@@ -1,0 +1,45 @@
+#
+# Use GNU make for this Makefile
+#
+# Makefile for cross-compiling C into MIPSEL COFF binaries
+# and then dumping them as MARS-compatible .asm files.
+#
+
+include Makefile.common
+
+#
+# Compile a C source file into an assembly language file.
+#
+%.s: %.c
+	$(CC) $(CFLAGS) -S $<
+
+#
+# Assemble an assembly language file into an object file.
+#
+%.o: %.s
+	$(AS) $(ASFLAGS) $< -o $@
+
+#
+# Link a single .o object file with the C runtime startup and C library
+# to create a COFF executable.
+#
+%.coff: %.o crt0.o libc.a
+	$(LD) $(LDFLAGS) crt0.o $< -o $@ libc.a
+
+#
+# Create a MARS-compatible .asm file from a COFF executable.
+#
+%.asm: %.coff
+	$(COFF2ASM) $< $@
+
+#
+# Assemble the C runtime startup code.
+#
+crt0.o:
+	$(MAKE) -f Makefile.lib crt0.o
+
+#
+# Construct the C library.
+#
+libc.a:
+	$(MAKE) -f Makefile.lib libc.a

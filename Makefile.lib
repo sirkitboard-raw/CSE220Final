@@ -1,0 +1,24 @@
+#
+# Use GNU make for this Makefile
+#
+# Makefile for building MIPS C runtime startup and C library,
+# using MIPS GCC cross-compiler.
+#
+
+include Makefile.common
+
+LIBOBJS=exit.o putchar.o putint.o open.o close.o read.o puthex.o putbinary.o putunsigned.o fgets.o
+
+%.o: libsrc/%.s
+	$(AS) $(ASFLAGS) $< -o $@
+
+%.o: libsrc/%.c
+	$(CC) $(CFLAGS) -c $<
+
+crt0.o:	libsrc/crt0.s
+	$(AS) $(ASFLAGS) $< -o $@
+
+libc.a: $(LIBOBJS)
+	$(AR) -r libc.a $(LIBOBJS)
+	rm -f $(LIBOBJS)
+	$(RANLIB) libc.a

@@ -1,0 +1,54 @@
+#
+# Change the following to point to where you have the MIPS cross-compiler
+# installed.  Once you have determined the correct one for your platform,
+# you can delete the others.
+#
+GCCDIR = /usr/local/bin/mips-cc/
+
+#
+# Change the following to point to where you have Java executables installed.
+# On Windows/Cygwin, this would typically be a path similar to:
+#
+#	'/cygdrive/c/WINDOWS/system32/'
+#
+# Exactly what it is depends on where Java is installed on your system.
+# Put it in single quotes to avoid problems with spaces in the pathname.
+# Use forward slashes (Unix/Cygwin style) as shown, and use the prefix
+# /cygdrive/c rather than putting a DOS/Windows-style drive letter C:
+# Don't forget the trailing slash.
+#
+JAVADIR = '/usr/bin/'
+JAVA= $(JAVADIR)java
+
+#
+# Name of make utility (for recursive make).
+# Uncomment if the default is wrong.
+#MAKE = gmake
+
+#
+# Names of commands in the C compiler toolchain.
+#
+CC = $(GCCDIR)gcc
+AS = $(GCCDIR)as
+LD = $(GCCDIR)ld
+AR = $(GCCDIR)ar
+RANLIB = $(GCCDIR)ranlib
+
+#
+# Flags to pass to the compiler executables.
+#
+LDFLAGS = -T ld_script -N
+ASFLAGS = -G 0 -mips1
+CFLAGS = -G 0 -B$(GCCDIR) -Iinclude -c -fno-builtin -nostdinc
+
+#
+# Utility for creating a MARS-compatible .asm file from a COFF binary
+# output by GCC.
+#
+COFF2ASM = $(JAVA) -jar /usr/local/bin/coff2asm/Coff2Asm.jar
+
+#
+# Deletes pre-defined suffixes
+#
+.SUFFIXES:
+
