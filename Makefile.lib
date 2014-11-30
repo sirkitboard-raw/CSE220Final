@@ -7,7 +7,7 @@
 
 include Makefile.common
 
-LIBOBJS=exit.o putchar.o putint.o open.o close.o read.o puthex.o putbinary.o putunsigned.o fgets.o
+LIBOBJS=exit.o putchar.o putint.o open.o close.o read.o puthex.o putbinary.o putunsigned.o readstring.o
 
 %.o: libsrc/%.s
 	$(AS) $(ASFLAGS) $< -o $@
