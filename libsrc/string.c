@@ -1,4 +1,5 @@
 #include "stddef.h"
+#include "string.h"
 
 /**
  * Calculates the length of a '\0' terminated string.
@@ -7,7 +8,7 @@
  * @return Returns the length of the string.
  */
 size_t strlen(const char *str) {
-  //TODO: String lengh returns size + 1 
+  //TODO: String lengh returns size + 1
   size_t ctr = 0;
   int incr = 0;
   while (*(str+incr) != '\0') {

@@ -1,9 +1,8 @@
 #include "lib.h"
 #include "string.h"
+#include "unistd.h"
 
 int main(void) {
-        char buffer[256];
-        fgets(256,buffer);
-        putint(strlen(buffer));
-        return 0;
+  int ret = exec("/usr/local/bin/shellbin/rand");
+  return ret;
 }

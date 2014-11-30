@@ -108,3 +108,19 @@ make clean
 make hello.asm
 mars hello.asm
 exit
+make clean
+make hello.asm
+mars hello.asm
+make hello.asm
+mars hello.asm
+make hello.asm
+make clean
+make hello.asm
+make clean
+make hello.asm
+mars hello.asm
+make hello.asm
+mars hello.asm
+aton
+atom
+exit
