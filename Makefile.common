@@ -51,4 +51,3 @@ COFF2ASM = $(JAVA) -jar /usr/local/bin/coff2asm/Coff2Asm.jar
 # Deletes pre-defined suffixes
 #
 .SUFFIXES:
-

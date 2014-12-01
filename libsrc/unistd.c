@@ -10,6 +10,7 @@ int exec(const char* path) {
   if(!(fp<0)) {
     read(fp, &buffer, EXEC_BUFFER_SIZE);
     ret = load(buffer);
+    return ret;
   }
-  return ret;
+  return -1;
 }

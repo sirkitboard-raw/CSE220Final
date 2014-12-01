@@ -3,6 +3,6 @@
 #include "unistd.h"
 
 int main(void) {
-  int ret = exec("/usr/local/bin/shellbin/rand");
+  int ret = exec("/usr/local/bin/shellbin/fun");
   return ret;
 }

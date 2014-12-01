@@ -23,4 +23,14 @@
    */
   int strcmp(const char *str1, const char *str2);
 
+  /**
+   * Copies the string from src into dst.
+   * @param dest Buffer to copy into.
+   * @param src String to copy.
+   * @param n Non-negative maximum about of bytes that can be copied from src.
+   * @return Returns the dst pointer.
+   */
+  char* strncpy(char *dst, const char *src, size_t n);
+
+
 #endif
