@@ -17,6 +17,14 @@ int toDigit(char a) {
   return a-48;
 }
 
+int fputc(int fd, char c) {
+  char buffer[1];
+  buffer[0]=c;
+  write(fd,&buffer,1);
+  return c;
+}
+
+
 void printf(const char* fmt, ...) {
   int* adr = &fmt;
   char* temp;

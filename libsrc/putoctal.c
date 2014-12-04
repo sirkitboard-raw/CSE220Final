@@ -1,11 +1,16 @@
 #include "lib.h"
 
 void putoctal(int a) {
-  int rem;
-  if(a==0){
-    return;
+  int i,temp;
+  temp = a >> 30;
+  temp = temp & 0x3;
+  putint(temp);
+  a = a << 2;
+  for(i=0;i<10;i++) {
+    temp = a & 0xE0000000;
+    temp = temp >>29;
+    temp = temp & 0x7;
+    putint(temp);
+    a = a << 3;
   }
-  rem = a%8;
-  putoctal(a/8);
-  putint(rem);
 }

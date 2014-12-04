@@ -5,4 +5,5 @@
   #endif
   char* fgets(int size, char *buffer);
   void printf(const char* fmt, ...);
+  int fputc(int fd, char c);
 #endif

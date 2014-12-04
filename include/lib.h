@@ -25,9 +25,15 @@ int close(int fd);
 
 int read(int fd, char* buffer, int num);
 
+int write(int fd, char* buffer, int num);
+
 char* readstring(char* buffer, int size);
 
 int getsp();
+
+inline int* getJumpBuf() __attribute__ ((always_inline));
+
+void setJumpBuf(int val, int sp, int fp, int ra, int a, int b, int c, int d, int e, int f, int g, int h);
 
 int load(int *address);
 
